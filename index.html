@@ -74,10 +74,10 @@
                 <span id="detail-population"></span>
               </p>
               <p><span>Region: {{ selectedCountry?.region }} </span><span id="detail-region"></span></p>
-              <p>
+              <!-- <p>
                 <span>Sub Region: {{ selectedCountry?.subregion }}</span>
                 <span id="detail-sub-region"></span>
-              </p>
+              </p> -->
               <p><span>Capital: {{ selectedCountry?.capital[0] }}</span><span id="detail-capital"></span></p>
             </div>
             <div class="text-container2">
@@ -120,6 +120,7 @@
           getInfo();
         });
 
+
         const getInfo = async () => {
           try {
             // const response = await fetch('https://restcountries.com/v3.1/all?fields=name,flags,population,continents');
@@ -130,7 +131,6 @@
             }
             const data = await response.json();
             countries.value = data; 
-            console.log(countries)
           } catch (error) {
             console.error("Error al obtener los países:", error);
           }
@@ -150,7 +150,6 @@
         const details = (country)=>{
           showDetail.value = !showDetail.value
           selectedCountry.value = country
-          console.log(selectedCountry.borders)
         }
 
         return {
@@ -161,7 +160,7 @@
           query,
           details,
           showDetail,
-          selectedCountry
+          selectedCountry,
         };
       }
     }).mount("#app");
