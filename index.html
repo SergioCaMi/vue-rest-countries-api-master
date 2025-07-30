@@ -66,7 +66,7 @@
           <div class="country-detail-text-container">
             <div class="text-container1">
               <p>
-                <span>Native Name: {{ selectedCountry?.name?.nativeName?.ron?.common }}</span>
+                <span>Native Name: {{ Object.values(selectedCountry.name.nativeName)[0]?.official }}</span>
                 <span id="detail-native-name"></span>
               </p>
               <p>
